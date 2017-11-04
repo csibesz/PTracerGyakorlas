@@ -1,0 +1,24 @@
+ROUTER - Subinterface
+interface GigabitEthernet0/0.<VLANnumber>
+ \\ description ** VLAN <VLANnumber> Interface **
+ encapsulation dot1Q <VLANnumber>
+ ip address x.x.x.x y.y.y.y
+
+# vlan database
+vlan <vlan number> name <vlan name>
+ 
+ 
+ Switch - Access port
+ interface FastEthernet0/2
+ switchport access vlan <VLANnumber>
+ switchport mode access
+ duplex full
+ speed 100
+ 
+ 
+ Trunk port
+interface GigabitEthernet0/1
+ switchport trunk allowed vlan add <VLANnumber>
+ switchport mode trunk
+ duplex full
+ speed 100
